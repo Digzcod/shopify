@@ -1,0 +1,55 @@
+/* TechCarousel.module.css */
+.carouselContainer {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carouselTrack {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  }
+
+  
+.carouselItem {
+  display: inline-block;
+  margin: 1rem 10px;
+  font-size: 1.5rem;
+}
+
+.scrollLeft, .scrollRight {
+  display: flex;
+  animation-duration: 90s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.scrollLeft {
+  animation-name: scrollLeft;
+}
+
+.scrollRight {
+  animation-name: scrollRight;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-60%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-60%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+

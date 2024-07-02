@@ -1,0 +1,27 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+  font-size: 78.5%;
+  letter-spacing: 1.7px;
+}
+
+body {
+  background-color: "#fefefe";
+  line-height: 150%;
+}
+
+
+.custom-checkbox:checked::before {
+  content: "✔";
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  padding: .5rem;
+  align-items: center;
+}
