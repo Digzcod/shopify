@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+
 import Image from 'next/image'
 import React from 'react'
 import Img from "../../public/not-img/404 Erro.svg"
