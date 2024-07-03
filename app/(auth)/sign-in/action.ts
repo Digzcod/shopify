@@ -1,8 +1,7 @@
-
-
 "use server";
 import createClientServer from "@/utils/supabase/server";
-import { cookies } from "next/headers";
+import { setCookie } from "cookies-next";
+
 
 export async function signInAction(
   email: string,
@@ -16,16 +15,14 @@ export async function signInAction(
     password,
   });
 
-  console.log(data)
-
   if (error) {
     return { message: error.message, status: 401 };
   }
 
   const maxAge = remember ? 30 * 24 * 60 * 60 : 5 * 60; // 30 days or 5 minutes
 
-  const cookieStore = cookies();
-  cookieStore.set("user", JSON.stringify(data.user), {
+  // Setting the cookie with cookies-next
+  setCookie("supabase-auth-token", data.session?.access_token || "", {
     maxAge,
     path: "/",
     httpOnly: true,

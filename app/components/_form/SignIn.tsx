@@ -60,7 +60,7 @@ const SignIn = () => {
         console.error("Unexpected error:", error);
         setTimeout(() => {
           setErrorMessage("");
-        }, 8000);
+        }, 3000);
       }
     },
   });

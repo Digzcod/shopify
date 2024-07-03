@@ -3,7 +3,13 @@ import createClientServer from "@/utils/supabase/server";
 
 export async function signUpAction(gender: string, username: string, fullName: string, email: string, password: string) {
   const supabase = createClientServer();
-  const { data, error } = await supabase.auth.signUp({ email, password });
+  const { data, error } = await supabase.auth.signUp({ 
+    email, 
+    password,
+    // options : {
+    //   emailRedirectTo: `${location.origin}/api/callback`
+    // } 
+  });
 
 
   console.log(data)
